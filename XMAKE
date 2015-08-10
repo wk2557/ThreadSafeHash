@@ -1,0 +1,14 @@
+#edit-mode: -*- python -*-
+#coding:gbk
+   
+
+WORKROOT('../../')
+CopyUsingHardLink(True)
+#LDFLAGS('-L"/search/wangkun/local/lib" -lpthread -lcrypto -lrt  -lprofiler')
+LDFLAGS('-L"/search/wangkun/local/lib" -lpthread -lcrypto -lrt ')
+INCPATHS('. ./include ../../Common/Gsl/include /search/wangkun/local/include')
+#CXXFLAGS('-g -fno-omit-frame-pointer -ltcmalloc_and_profiler')
+#CXXFLAGS('-g -fno-omit-frame-pointer ')
+CONFIGS('Publish/Common/Gsl@Gsl_1.0.4.9')
+
+Application('HashCompare', Sources(GLOB('./src/*.cpp')))
